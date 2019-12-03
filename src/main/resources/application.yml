@@ -1,0 +1,36 @@
+server:
+  servlet:
+    context-path: /test-nisum-api
+
+spring:
+  main:
+    banner-mode: "off"
+  jpa:
+    database: h2
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      ddl-auto: create-drop
+      database-platform: org.hibernate.dialect.H2Dialect
+    properties:      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+      
+  datasource:
+    url: jdbc:h2:mem:testdb
+    platform: h2
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+  
+logging:
+  level:
+    org:
+      springframework: ERROR
